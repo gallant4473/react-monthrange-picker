@@ -57,7 +57,8 @@
     "moment-range": "^2.2.0",
     "prop-types": "^15.5.10",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-onclickoutside": "^6.4.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",

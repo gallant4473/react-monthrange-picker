@@ -1,9 +1,10 @@
 import React from 'react';
 import moment from 'moment';
-import PropTypes from 'prop-types'
 import CustomPropTypes from './utils/custom_prop_types';
 import Picker from './picker';
 import Calendar from './calendar';
+import onClickOutside from 'react-onclickoutside'
+import PropTypes from 'prop-types'
 
 require('moment-range');
 
@@ -18,6 +19,9 @@ class App extends React.Component {
     const { selectedDateRange, restrictionRange, display } = props;
     this.state = { selectedDateRange, restrictionRange, display };
     this.selectedDateRange = selectedDateRange.clone();
+  }
+  handleClickOutside (evt) {
+    this.onCancel()
   }
   componentDidMount() {
     if (this.props.onRender) {
@@ -115,4 +119,4 @@ App.defaultProps = {
   direction: 'bottom',
 };
 
-export default App;
+export default onClickOutside(App);
