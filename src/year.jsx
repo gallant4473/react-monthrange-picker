@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import CustomPropTypes from './utils/custom_prop_types';
+import PropTypes from 'prop-types'
 
 const MONTHS = [
   'Jan',
@@ -125,8 +126,8 @@ YearBase.propTypes = {
   restrictionRange: CustomPropTypes.MomentRangeType.isRequired,
   currYear: CustomPropTypes.MomentType.isRequired,
   selectedDateRange: CustomPropTypes.MomentRangeType.isRequired,
-  onYearChange: React.PropTypes.func,
-  onSelect: React.PropTypes.func.isRequired,
+  onYearChange: PropTypes.func,
+  onSelect: PropTypes.func.isRequired,
 };
 
 class YearStart extends YearBase {
