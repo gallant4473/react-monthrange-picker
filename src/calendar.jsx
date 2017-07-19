@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import _ from 'lodash';
+import PropTypes from 'prop-types'
 import CustomPropTypes from './utils/custom_prop_types';
 import { YearStart, YearEnd } from './year';
 
@@ -191,15 +192,15 @@ class Calendar extends React.Component {
 Calendar.propTypes = {
   selectedDateRange: CustomPropTypes.MomentRangeType.isRequired,
   restrictionRange: CustomPropTypes.MomentRangeType.isRequired,
-  direction: React.PropTypes.oneOf(['top', 'left', 'right', 'bottom']).isRequired,
-  display: React.PropTypes.bool.isRequired,
-  onSelect: React.PropTypes.func.isRequired,
-  onApply: React.PropTypes.func.isRequired,
-  onCancel: React.PropTypes.func.isRequired,
-  onYearChange: React.PropTypes.func,
-  position: React.PropTypes.shape({
-    top: React.PropTypes.number,
-    left: React.PropTypes.number,
+  direction: PropTypes.oneOf(['top', 'left', 'right', 'bottom']).isRequired,
+  display: PropTypes.bool.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  onApply: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  onYearChange: PropTypes.func,
+  position: PropTypes.shape({
+    top: PropTypes.number,
+    left: PropTypes.number,
   }),
 };
 
