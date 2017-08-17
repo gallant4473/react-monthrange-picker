@@ -67,7 +67,6 @@ class YearBase extends React.Component {
     const currYear = this.state.currYear;
     const selectedRange = this.props.selectedDateRange;
     const newDate = new Date();
-
     newDate.setYear(currYear);
     newDate.setDate(1);
     const months = MONTHS.map((month, idx) => {
@@ -98,6 +97,7 @@ class YearBase extends React.Component {
         <div className="head">
           <h4 className="title clearfix">
             <button
+              disabled={this.props.restrictionRange.start.format('YYYY')===currYear}
               className="btn btn-plain year-down pull-left"
               onClick={this.reduceYear}
             >
@@ -105,6 +105,7 @@ class YearBase extends React.Component {
             </button>
             {currYear}
             <button
+              disabled={this.props.restrictionRange.end.format('YYYY')===currYear}
               className="btn btn-plain year-up pull-right"
               onClick={this.incYear}
             >
