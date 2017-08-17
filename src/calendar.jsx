@@ -154,6 +154,7 @@ class Calendar extends React.Component {
                   onSelect={this.selectMonthFn}
                   currYear={startDate.clone()}
                   selectedDateRange={selectedRange}
+                  futureDisable={this.props.futureDisable}
                 />
               </div>
               <div className="col-xs-6 year-end year">
@@ -163,6 +164,7 @@ class Calendar extends React.Component {
                   onSelect={this.selectMonthFn}
                   currYear={endDate.clone()}
                   selectedDateRange={selectedRange}
+                  futureDisable={this.props.futureDisable}
                 />
               </div>
             </div>
@@ -197,6 +199,7 @@ Calendar.propTypes = {
   onSelect: PropTypes.func.isRequired,
   onApply: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  futureDisable: PropTypes.bool.isRequired,
   onYearChange: PropTypes.func,
   position: PropTypes.shape({
     top: PropTypes.number,

@@ -85,6 +85,7 @@ class YearBase extends React.Component {
             data-idx={idx}
             onClick={this.selectMonthFn}
             data-month={month}
+            disabled={this.props.restrictionRange.end.format('YYYY')===currYear && idx > this.props.restrictionRange.end.format('M')-1 && this.props.futureDisable }
           >
             {month}
           </button>
@@ -129,6 +130,7 @@ YearBase.propTypes = {
   selectedDateRange: CustomPropTypes.MomentRangeType.isRequired,
   onYearChange: PropTypes.func,
   onSelect: PropTypes.func.isRequired,
+  futureDisable: PropTypes.bool.isRequired
 };
 
 class YearStart extends YearBase {

@@ -80,6 +80,7 @@ class App extends React.Component {
           onSelect={this.onSelectFn}
           onApply={this.onApplyFn}
           onCancel={this.onCancelFn}
+          futureDisable={this.props.futureDisable}
           direction={this.props.direction}
           onYearChange={this.props.onYearChange}
           position={this.props.position}
@@ -98,6 +99,7 @@ App.propTypes = {
   onApply: PropTypes.func,
   onCancel: PropTypes.func,
   display: PropTypes.bool,
+  futureDisable: PropTypes.bool,
   direction: PropTypes.oneOf(['top', 'left', 'right', 'bottom']),
   position: PropTypes.shape({
     top: PropTypes.number,
@@ -116,6 +118,7 @@ App.defaultProps = {
   selectedDateRange: moment.range(startDate, endDate),
   restrictionRange: moment.range(minDate, maxDate),
   display: false,
+  futureDisable: false,
   direction: 'bottom',
 };
 
