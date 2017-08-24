@@ -61,10 +61,10 @@ class App extends React.Component {
   handleClick(e) {
     e.preventDefault();
     e.stopPropagation();
-    if (this.state.display) {
-      return;
-    }
-    this.state.display = true;
+    //if (this.state.display) {
+    //  return;
+    //}
+    this.state.display = !this.state.display;
     this.setState(this.state);
   }
   render() {
