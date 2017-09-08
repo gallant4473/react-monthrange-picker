@@ -129,6 +129,7 @@ class Calendar extends React.Component {
       newDateRangeClone.end.year(newDateRangeClone.start.year());
     }
     if (this.props.onSelect) {
+      newDateRangeClone.end.date(new Date(newDateRangeClone.end.year(), newDateRangeClone.end.month() + 1, 0).getDate())
       this.props.onSelect(newDateRangeClone);
     }
 
