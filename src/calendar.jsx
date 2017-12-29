@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import _ from 'lodash';
+import cloneDeep from 'lodash/cloneDeep'
 import PropTypes from 'prop-types'
 import CustomPropTypes from './utils/custom_prop_types';
 import { YearStart, YearEnd } from './year';
@@ -52,7 +52,7 @@ class Calendar extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setStyle(nextProps);
 
-    const { selectedDateRange, restrictionRange } = _.cloneDeep(nextProps);
+    const { selectedDateRange, restrictionRange } = cloneDeep(nextProps);
 
     this.state = { selectedDateRange, restrictionRange };
     this.setState(this.state);
@@ -74,8 +74,8 @@ class Calendar extends React.Component {
       positionLeft = 0;
     }
 
-    const calStyle = _.cloneDeep(this.calStyle);
-    const arrowStyle = _.cloneDeep(this.arrowStyle);
+    const calStyle = cloneDeep(this.calStyle);
+    const arrowStyle = cloneDeep(this.arrowStyle);
     const picker = this.$el.siblings('.picker');
     const direction = this.props.direction;
     const adjustmentConstant = 10;
