@@ -69,7 +69,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="month-picker">
+      <div className={this.props.className ? `${this.props.className} month-picker` : "month-picker"}>
         <Picker
           selectedDateRange={this.state.selectedDateRange.clone()} onClick={this.handleClickFn}
         />
