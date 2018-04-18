@@ -54,8 +54,7 @@ class Calendar extends React.Component {
 
     const { selectedDateRange, restrictionRange } = _.cloneDeep(nextProps);
 
-    this.state = { selectedDateRange, restrictionRange };
-    this.setState(this.state);
+    this.setState({ selectedDateRange, restrictionRange });
   }
   setStyle(props) {
     let positionTop;
